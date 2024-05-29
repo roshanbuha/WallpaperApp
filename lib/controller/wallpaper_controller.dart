@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 
 class WallpaperController extends GetxController {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
-  final advancedDrawerController = AdvancedDrawerController();
+  final AdvancedDrawerController advancedDrawerController = AdvancedDrawerController();
   RxBool isLoading = false.obs;
   List<String> dataList = [
     "https://images.unsplash.com/photo-1716619222059-62e8670293e6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",

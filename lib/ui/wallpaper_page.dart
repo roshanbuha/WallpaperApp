@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:flutter_wallpaper/controller/wallpaper_controller.dart';
+import 'package:flutter_wallpaper/ui/ringtone_page.dart';
+import 'package:flutter_wallpaper/ui/video_wallpaper.dart';
 import 'package:get/get.dart';
 
 class WallpaperPage extends StatelessWidget {
@@ -85,21 +87,27 @@ class WallpaperPage extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
+            // ListTile(
+            //   onTap: () {
+            //     wallpaperController.advancedDrawerController.hideDrawer();
+            //     Get.to(VideoWallpaper());
+            //   },
+            //   leading: Image.asset(
+            //     "assets/icon/wallpaper_icon.png",
+            //     color: Colors.white,
+            //     height: 20,
+            //     width: 20,
+            //   ),
+            //   title: const Text(
+            //     "Video Wallpaper",
+            //     style: TextStyle(color: Colors.white, fontSize: 18),
+            //   ),
+            // ),
             ListTile(
-              onTap: () {},
-              leading: Image.asset(
-                "assets/icon/wallpaper_icon.png",
-                color: Colors.white,
-                height: 20,
-                width: 20,
-              ),
-              title: const Text(
-                "Video Wallpaper",
-                style: TextStyle(color: Colors.white, fontSize: 18),
-              ),
-            ),
-            ListTile(
-              onTap: () {},
+              onTap: () {
+                    wallpaperController.advancedDrawerController.hideDrawer();
+                    Get.to(RingTonePage());
+              },
               leading: Image.asset(
                 "assets/icon/ringtone_icon.png",
                 color: Colors.white,
@@ -242,10 +250,15 @@ class WallpaperPage extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
       color: Colors.black.withOpacity(0.5),
-      child: const Center(
-        child: CircularProgressIndicator(
-          color: Colors.white,
-        ),
+      child: const Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          CircularProgressIndicator(
+            color: Colors.white,
+          ),
+          SizedBox(height: 10),
+          Text("Please Wait",style: TextStyle(color: Colors.white),)
+        ],
       ),
     );
   }
